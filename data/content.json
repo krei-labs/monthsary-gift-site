@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "title": "Happy 1st Monthsary, My Love ❤️",
+    "subtitle": "One month down, forever to go."
+  },
+  "hero": {
+    "heading": "Happy 1st Monthsary, My Love",
+    "intro": "This little website is my digital love letter for our first monthsary. Thank you for making ordinary days feel magical."
+  },
+  "quotes": [
+    "In your smile, I found my favorite home.",
+    "Every day with you feels like a gentle celebration.",
+    "You are my peace, my laughter, and my forever person.",
+    "Loving you is my easiest decision.",
+    "One month with you, and my heart already knows forever."
+  ],
+  "loveMeter": {
+    "label": "How full my heart is for you",
+    "value": 100
+  },
+  "milestones": [
+    {
+      "label": "First Date",
+      "value": "Unforgettable"
+    },
+    {
+      "label": "First Kiss",
+      "value": "Butterflies x 100"
+    },
+    {
+      "label": "First Monthsary",
+      "value": "[Your Monthsary Date]"
+    }
+  ],
+  "surprise": {
+    "title": "A Little Surprise For You 💌",
+    "message": [
+      "To: My Love",
+      "If I could relive one month forever, I'd choose this one with you every single time. I'm so grateful for you and for us, and I hope we keep growing and learning from each other, fighting fair and always finding our way back to each other. Thank you for always making me feel safe, seen, and loved. I promise to keep choosing you and making you feel special, every single day. Happy 1st monthsary, my love. I love you so much, and here's to many more memories to come!",
+      "From: [Your Name]"
+    ]
+  },
+  "loveLetter": {
+    "title": "My Letter To You",
+    "body": "My love, in just one month, you became my safest home and my favorite adventure. Thank you for your patience, your laughter, your warmth, and the way you love me even on my quiet days. I promise to keep choosing you, understanding you, and celebrating you in all seasons of life. Happy 1st monthsary, my love. I love you endlessly."
+  },
+  "timeline": [
+    {
+      "date": "Day 1",
+      "title": "The Beginning",
+      "description": "The day our story officially started — my favorite plot twist."
+    },
+    {
+      "date": "Week 1",
+      "title": "Comfort Found",
+      "description": "We talked for hours and it felt like home."
+    },
+    {
+      "date": "Week 2",
+      "title": "Sweet Little Habits",
+      "description": "From good morning texts to good night calls, every little thing mattered."
+    },
+    {
+      "date": "Week 3",
+      "title": "Stronger Together",
+      "description": "We learned how to listen, understand, and love deeper."
+    },
+    {
+      "date": "[Your Monthsary Date]",
+      "title": "1st Monthsary",
+      "description": "Today we celebrate us — and all the moments still waiting for us."
+    }
+  ],
+  "reasons": [
+    "Your smile can heal my hardest days.",
+    "You make me feel seen, heard, and valued.",
+    "You are both my peace and my excitement.",
+    "You love me in ways I once only prayed for.",
+    "You make forever feel possible.",
+    "You support my dreams like they are yours too.",
+    "You listen with your whole heart.",
+    "You make simple moments feel extraordinary.",
+    "You are my calm when life feels heavy.",
+    "You choose love every single day.",
+    "You make me laugh even when I try not to.",
+    "You make our relationship feel safe and beautiful.",
+    "You believe in me when I doubt myself.",
+    "You turn ordinary days into my favorite memories.",
+    "You are gentle with my heart and honest with your love.",
+    "You make me feel lucky, every single day.",
+    "You are my favorite hello and hardest goodbye.",
+    "You remind me that real love is peaceful.",
+    "You make forever sound exciting and warm."
+  ],
+  "memories": [
+    {
+      "text": "Our first night and kiss.",
+      "photo": "./media/photos/memory1.jpg"
+    },
+    {
+      "text": "That moment we laughed so hard we forgot everything else.",
+      "photo": "./media/photos/memory2.jpg"
+    },
+    {
+      "text": "Your sweet voice saying my name.",
+      "photo": "./media/photos/memory3.jpg"
+    },
+    {
+      "text": "The calm I feel whenever you are with me.",
+      "photo": "./media/photos/memory4.jpg"
+    },
+    {
+      "text": "The way you give your shoulders to lean on.",
+      "photo": "./media/photos/memory5.jpg"
+    },
+    {
+      "text": "Our first Photobooth.",
+      "photo": "./media/photos/memory6.jpg"
+    },
+    {
+      "text": "A little moment that felt like forever.",
+      "photo": "./media/photos/memory7.jpg"
+    },
+    {
+      "text": "The day I realized I want more memories with you.",
+      "photo": "./media/photos/memory8.jpg"
+    },
+    {
+      "text": "First Picnic Date with Bicol Express.",
+      "photo": "./media/photos/memory9.jpg"
+    },
+    {
+      "text": "Teaching me how to ride a bike.",
+      "photo": "./media/photos/memory10.jpg"
+    },
+    {
+      "text": "A first time memory I’ll keep in my heart forever.",
+      "photo": "./media/photos/memory11.jpg"
+    },
+    {
+      "text": "Our First Memorable Date.",
+      "photo": "./media/photos/memory12.jpg"
+    }
+  ],
+  "celebration": {
+    "title": "Celebrate With Our Songs 🎶",
+    "description": "Pick a song and let’s celebrate our 1st monthsary.",
+    "songs": [
+      {
+        "name": "You Make It Right",
+        "artist": "Amiel Sol",
+        "url": "./media/music/song1.mp3",
+        "poem": "My love, when this song begins, my heart remembers how your love makes every broken piece in me feel whole again."
+      },
+      {
+        "name": "Ikaw Lang Patutunguhan",
+        "artist": "Amiel Sol",
+        "url": "./media/music/song2.mp3",
+        "poem": "Sa bawat tibok ng kantang ito, mahal ko, ikaw lang ang dulo ng lahat ng panalangin ko, ikaw lang ang patutunguhan ng puso ko."
+      },
+      {
+        "name": "Be With You",
+        "artist": "The Ridleys",
+        "url": "./media/music/song3.mp3",
+        "poem": "If forever has a sound, it is this melody beside your name, my love, because all I want is to be with you in every season."
+      },
+      {
+        "name": "Star Song",
+        "artist": "Rob Daniel",
+        "url": "./media/music/song4.mp3",
+        "poem": "My dear love, even the stars seem quiet when you smile, because your light outshines the whole night sky in my world."
+      },
+      {
+        "name": "I'd Rather Be With You",
+        "artist": "Joshua Radin",
+        "url": "./media/music/song5.mp3",
+        "poem": "In a world of endless choices, my heart chooses only one truth again and again: I'd rather be with you."
+      }
+    ]
+  }
+}

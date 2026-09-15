@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 1st Monthsary ❤️</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    #envelopeCard {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 143, 184, 0.25),
+    rgba(255, 77, 141, 0.15)
+  );
+  border: 2px solid rgba(255,255,255,.2);
+  box-shadow: 0 0 30px rgba(255,143,184,.25);
+}
+
+#envelopeCard:hover {
+  box-shadow: 0 0 40px rgba(255,143,184,.5);
+}
+    :root{--bg:#1f1023;--card:rgba(255,255,255,.08);--border:rgba(255,255,255,.18);--pink:#ff4d8d;--rose:#ff8fb8;--text:#ffe9f3;--glow:rgba(255,120,170,.45)}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;font-family:'Poppins',sans-serif;color:var(--text);background:radial-gradient(circle at 15% 10%,#4c184d 0%,transparent 40%),radial-gradient(circle at 85% 20%,#66294f 0%,transparent 35%),radial-gradient(circle at 50% 100%,#2d1338 0%,transparent 45%),var(--bg);overflow-x:hidden}
+    .glass{background:var(--card);border:1px solid var(--border);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+    .title-script{font-family:'Great Vibes',cursive;line-height:1.1}
+    .btn-love{background:linear-gradient(90deg,var(--rose),var(--pink));border:none;color:#fff;font-weight:700;border-radius:999px;padding:.75rem 1.2rem;cursor:pointer;box-shadow:0 8px 20px var(--glow)}
+    .btn-love:hover{transform:translateY(-1px)}
+    .progress-wrap{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:min(92vw,560px);height:8px;border-radius:999px;background:rgba(255,255,255,.13);z-index:50;overflow:hidden}
+    .progress-bar{height:100%;width:20%;background:linear-gradient(90deg,var(--rose),var(--pink));transition:width .4s ease}
+    .step{display:none;opacity:0;transform:translateY(22px)}
+    .step.active{display:block}
+    .timeline-line{position:absolute;left:12px;top:0;width:2px;height:100%;background:linear-gradient(180deg,var(--rose),rgba(255,255,255,.15))}
+    .heart-float,.emoji-float{position:fixed;font-size:22px;animation:floatUp linear forwards;z-index:2;pointer-events:none;opacity:.9}
+    @keyframes floatUp{from{transform:translateY(0) scale(1);opacity:.9}to{transform:translateY(-120vh) scale(1.4);opacity:0}}
+    .song-item.active{border-color:var(--rose);background:rgba(255,143,184,.2)}
+    .memory-card img{width:100%;height:180px;object-fit:cover;border-radius:.75rem;border:1px solid rgba(255,255,255,.2);margin-bottom:.55rem;cursor:pointer}
+    .poem-modal,.password-modal,.lightbox-modal{position:fixed;inset:0;background:rgba(16,6,18,.72);z-index:80;display:none;align-items:center;justify-content:center;padding:1rem}
+    .password-modal{z-index:90}.poem-modal.show,.password-modal.show,.lightbox-modal.show{display:flex}
+    .return-wrap{position:fixed;top:28px;left:14px;z-index:70}
+    .btn-return{border:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.35);color:#ffe9f3;border-radius:999px;padding:.45rem .8rem;font-size:.82rem;font-weight:600;display:none}
+    .btn-return.show{display:inline-flex;align-items:center;gap:.3rem}
+    .bg-sound-wrap{position:fixed;left:14px;bottom:14px;z-index:80}
+    .bg-sound-btn{width:42px;height:42px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.38);color:#ffe9f3;font-size:18px;cursor:pointer}
+    .audio-wrap{width:100%}.custom-player{width:100%;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:.6rem;background:rgba(255,255,255,.92);color:#2d1630;border-radius:999px;padding:.55rem .85rem}
+    .player-btn{border:0;border-radius:999px;width:34px;height:34px;font-size:14px;cursor:pointer}
+    .seek-wrap{width:100%;display:grid;grid-template-columns:1fr auto;align-items:center;gap:.5rem}
+    #seekBar{width:100%;accent-color:#ff4d8d;cursor:pointer}.time-label{font-size:.75rem;white-space:nowrap;color:#2d1630;font-weight:600}
+    #audioPlayer{display:none}
+    .meter-track{height:10px;border-radius:999px;background:rgba(255,255,255,.22);overflow:hidden}
+    .meter-fill{height:100%;width:0%;background:linear-gradient(90deg,#ff8fb8,#ff4d8d);transition:width 1.2s ease}
+    .equalizer{display:inline-flex;align-items:end;gap:3px;height:18px}
+    .equalizer span{width:4px;background:#ff4d8d;border-radius:2px;height:5px;opacity:.35}
+    .equalizer.playing span:nth-child(1){animation:eq .6s infinite}
+    .equalizer.playing span:nth-child(2){animation:eq .45s infinite .1s}
+    .equalizer.playing span:nth-child(3){animation:eq .5s infinite .2s}
+    .equalizer.playing span:nth-child(4){animation:eq .55s infinite .05s}
+    @keyframes eq{0%{height:4px;opacity:.35}50%{height:17px;opacity:1}100%{height:6px;opacity:.45}}
+  </style>
+</head>
+<div id="surpriseModal" class="poem-modal">
+  <div class="glass rounded-3xl p-6 max-w-lg w-full">
+    <h3 id="surpriseModalTitle" class="text-2xl font-semibold mb-4"></h3>
+
+    <div
+      id="surpriseModalMessage"
+      class="text-pink-50/90 leading-7 whitespace-pre-line"
+    ></div>
+
+    <div class="mt-5 text-right">
+      <button id="closeSurpriseModal" class="btn-love">
+        Close ❤️
+      </button>
+    </div>
+  </div>
+</div>
+<body>
+  <div class="progress-wrap"><div id="progressBar" class="progress-bar"></div></div>
+  <div class="return-wrap"><button id="returnToStartBtn" class="btn-return">← Previous</button></div>
+  <div class="bg-sound-wrap"><button id="bgSoundBtn" class="bg-sound-btn">🔊</button></div>
+
+  <main class="max-w-6xl mx-auto px-4 py-16 md:py-24 relative z-10">
+    <section id="step1" class="step active glass rounded-3xl p-6 md:p-10 text-center">
+      <p class="text-5xl mb-4">💖</p>
+      <h1 id="heroHeading" class="title-script text-5xl md:text-7xl mb-3">Happy 1st Monthsary, My Love</h1>
+      <p id="heroIntro" class="max-w-2xl mx-auto text-[15px] md:text-lg text-pink-100/90 leading-relaxed"></p>
+      <p id="quoteText" class="text-pink-100/90 mt-4"></p>
+      <div class="max-w-xl mx-auto mt-4 text-left">
+        <p class="text-sm text-pink-100/85" id="loveMeterLabel">Love Meter</p>
+        <div class="meter-track mt-2"><div id="loveMeterFill" class="meter-fill"></div></div>
+        <p id="loveMeterValue" class="text-sm mt-2 text-pink-50/90">0%</p>
+      </div>
+      <div class="mt-8 flex justify-center gap-3 flex-wrap"><button class="btn-love" data-next>Open Our Little World</button></div>
+    </section>
+
+    <section id="step2" class="step glass rounded-3xl p-6 md:p-10 mt-6">
+      <div class="text-center mb-6">
+        <h2 class="title-script text-4xl md:text-6xl">My Love Letter</h2>
+        <p class="text-pink-100/80">A note from my heart to yours.</p>
+      </div>
+      <article class="glass rounded-2xl p-5 md:p-7 max-w-3xl mx-auto">
+        <h3 id="letterTitle" class="font-semibold text-xl mb-2 text-pink-100"></h3>
+        <p id="letterBody" class="text-pink-50/90 leading-7 whitespace-pre-line"></p>
+      </article>
+      <div class="mt-6 glass rounded-2xl p-5 max-w-3xl mx-auto">
+        <h4 class="font-semibold text-lg mb-3">Milestones</h4>
+        <div id="milestonesWrap" class="grid md:grid-cols-3 gap-3"></div>
+      </div>
+      <div class="mt-8 text-center"><button class="btn-love" data-next>Continue</button></div>
+    </section>
+
+    <section id="step3" class="step glass rounded-3xl p-6 md:p-10 mt-6">
+      <div class="grid lg:grid-cols-2 gap-6">
+        <div class="glass rounded-2xl p-5">
+          <h3 class="text-2xl font-semibold mb-4">Reasons I Love You</h3>
+          <ul id="reasonsList" class="space-y-3 text-pink-50/90"></ul>
+        </div>
+        <div class="glass rounded-2xl p-5">
+          <h3 class="text-2xl font-semibold mb-4">Our Sweet Memories</h3>
+          <div id="memoriesList" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+        </div>
+      </div>
+      <div class="mt-6 text-center">
+  <h4 id="surpriseTitle" class="font-semibold text-xl mb-4"></h4>
+
+  <div id="envelopeCard" class="glass rounded-3xl p-8 max-w-sm mx-auto cursor-pointer hover:scale-105 transition">
+    <div class="text-7xl">💌</div>
+    <p class="mt-3 text-pink-100">
+      Click to open your surprise letter
+    </p>
+  </div>
+</div>
+      <div class="mt-8 text-center"><button class="btn-love" data-next>Show Our Timeline</button></div>
+    </section>
+
+    <section id="step4" class="step glass rounded-3xl p-6 md:p-10 mt-6">
+      <h3 class="title-script text-4xl md:text-5xl text-center mb-6">Our First Month Timeline</h3>
+      <div id="timelineWrap" class="relative pl-10 space-y-5 max-w-3xl mx-auto"></div>
+      <div class="mt-8 text-center"><button class="btn-love" data-next>Celebrate With Music</button></div>
+    </section>
+
+    <section id="step5" class="step glass rounded-3xl p-6 md:p-10 mt-6">
+      <div class="text-center mb-6">
+        <h3 id="celebrateTitle" class="title-script text-4xl md:text-6xl"></h3>
+        <p id="celebrateDesc" class="text-pink-100/90 mt-2"></p>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-5">
+        <div id="songsList" class="space-y-3"></div>
+        <div class="glass rounded-2xl p-4">
+          <p class="text-sm text-pink-100/80 mb-2">Now Playing <span class="equalizer" id="eq"><span></span><span></span><span></span><span></span></span></p>
+          <h4 id="nowPlaying" class="font-semibold text-lg mb-3">No song selected yet</h4>
+          <div class="audio-wrap">
+            <audio id="audioPlayer" controls class="w-full"></audio>
+            <div class="custom-player">
+              <button id="playPauseBtn" class="player-btn">▶</button>
+              <div class="seek-wrap"><input id="seekBar" type="range" min="0" max="100" value="0"><span id="timeLabel" class="time-label">0:00 / 0:00</span></div>
+              <button id="restartBtn" class="player-btn">↺</button>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <button id="celebrateBtn" class="btn-love">Celebrate 🎉</button>
+            <button id="heartRainBtn" class="btn-love">Heart Rain ❤️</button>
+            <button id="emoteBtn" class="btn-love">Emote Burst ✨</button>
+          </div>
+          <article id="poemPersistent" class="glass rounded-xl p-3 mt-4 hidden">
+            <h5 id="poemPersistentTitle" class="font-semibold mb-1"></h5>
+            <p id="poemPersistentText" class="text-sm text-pink-50/90"></p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="passwordModal" class="password-modal">
+    <div class="glass rounded-2xl p-5 max-w-sm w-full">
+      <h3 class="text-xl font-semibold mb-2">Private Love Space 🔐</h3>
+      <p class="text-sm text-pink-100/85 mb-3">Enter password to continue</p>
+      <input id="passwordInput" type="password" class="w-full rounded-xl px-3 py-2 text-black" placeholder="Password">
+      <p id="passwordError" class="text-sm text-red-300 mt-2 hidden">Wrong password. Try again.</p>
+      <div class="mt-3 text-right"><button id="passwordSubmitBtn" class="btn-love">Unlock</button></div>
+    </div>
+  </div>
+
+  <div id="poemModal" class="poem-modal">
+    <div class="glass rounded-2xl p-5 max-w-xl w-full">
+      <h4 id="poemModalTitle" class="text-xl font-semibold mb-2"></h4>
+      <p id="poemModalText" class="text-pink-50/90"></p>
+      <div class="mt-4 text-right"><button id="closePoemModal" class="btn-love">Close</button></div>
+    </div>
+  </div>
+
+  <div id="lightboxModal" class="lightbox-modal">
+    <div class="glass rounded-2xl p-4 max-w-3xl w-full">
+      <img id="lightboxImage" src="" alt="Memory" class="w-full max-h-[70vh] object-contain rounded-xl">
+      <div class="mt-3 flex justify-between">
+        <button id="lightboxPrev" class="btn-love">Prev</button>
+        <button id="lightboxClose" class="btn-love">Close</button>
+        <button id="lightboxNext" class="btn-love">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const SITE_PASSWORD='051626',BG_MUSIC_SRC='./media/music/background.mp3';
+    let isUnlocked=false,bgMuted=false,quoteTimer=null,lightboxPhotos=[],lightboxIndex=0;
+    const state={currentStep:1,totalSteps:5,content:null}; const stepIds=['step1','step2','step3','step4','step5'];
+
+    const safeArray=v=>Array.isArray(v)?v:[];
+    const fmt=s=>{if(!Number.isFinite(s)||s<0)return'0:00';const m=Math.floor(s/60);const sec=Math.floor(s%60).toString().padStart(2,'0');return`${m}:${sec}`};
+
+    function animateIn(sel){const el=document.querySelector(sel);if(el)gsap.fromTo(el,{opacity:0,y:22},{opacity:1,y:0,duration:.7,ease:'power2.out'})}
+    function setProgress(){document.getElementById('progressBar').style.width=`${(state.currentStep/state.totalSteps)*100}%`}
+    function showStep(n){stepIds.forEach((id,i)=>{const node=document.getElementById(id);node.classList.remove('active');node.style.opacity=0;node.style.transform='translateY(22px)';if(i+1===n){node.classList.add('active');animateIn(`#${id}`)}});state.currentStep=n;setProgress();document.getElementById('returnToStartBtn').classList.toggle('show',n>1)}
+    function nextStep(){if(state.currentStep<state.totalSteps)showStep(state.currentStep+1)}
+
+    function launchConfetti(){const end=Date.now()+3000;(function frame(){confetti({particleCount:4,angle:60,spread:70,origin:{x:0},colors:['#ff4d8d','#ff8fb8','#ffd0e1','#fff']});confetti({particleCount:4,angle:120,spread:70,origin:{x:1},colors:['#ff4d8d','#ff8fb8','#ffd0e1','#fff']});if(Date.now()<end)requestAnimationFrame(frame)})()}
+    function createHeartRain(){for(let i=0;i<30;i++){setTimeout(()=>{const s=document.createElement('span');s.className='heart-float';s.textContent=['💖','💕','❤️','💘'][Math.floor(Math.random()*4)];s.style.left=`${Math.random()*100}vw`;s.style.bottom='-30px';s.style.animationDuration=`${3+Math.random()*3}s`;document.body.appendChild(s);setTimeout(()=>s.remove(),6500)},i*85)}}
+    function createEmotionBurst(){const arr=['🥰','😘','😍','💞','💓','✨'];for(let i=0;i<32;i++){setTimeout(()=>{const s=document.createElement('span');s.className='emoji-float';s.textContent=arr[Math.floor(Math.random()*arr.length)];s.style.left=`${Math.random()*100}vw`;s.style.bottom='-20px';s.style.animationDuration=`${2.5+Math.random()*3}s`;document.body.appendChild(s);setTimeout(()=>s.remove(),6500)},i*75)}}
+
+    function initQuoteRotator(quotes){const q=document.getElementById('quoteText');if(quoteTimer)clearInterval(quoteTimer);if(!quotes.length){q.textContent='You are my favorite person, always.';return}let i=0;q.textContent=quotes[0];quoteTimer=setInterval(()=>{i=(i+1)%quotes.length;q.textContent=quotes[i]},3500)}
+    function openLightbox(i){if(!lightboxPhotos.length)return;lightboxIndex=i;document.getElementById('lightboxImage').src=lightboxPhotos[lightboxIndex];document.getElementById('lightboxModal').classList.add('show')}
+    function stepLightbox(d){if(!lightboxPhotos.length)return;lightboxIndex=(lightboxIndex+d+lightboxPhotos.length)%lightboxPhotos.length;document.getElementById('lightboxImage').src=lightboxPhotos[lightboxIndex]}
+
+    function renderData(data){
+      const heroHeading=document.getElementById('heroHeading'),heroIntro=document.getElementById('heroIntro'),letterTitle=document.getElementById('letterTitle'),letterBody=document.getElementById('letterBody');
+      const reasonsList=document.getElementById('reasonsList'),memoriesList=document.getElementById('memoriesList'),timelineWrap=document.getElementById('timelineWrap');
+      const celebrateTitle=document.getElementById('celebrateTitle'),celebrateDesc=document.getElementById('celebrateDesc'),songsList=document.getElementById('songsList'),nowPlaying=document.getElementById('nowPlaying');
+      const audioPlayer=document.getElementById('audioPlayer'),poemModal=document.getElementById('poemModal'),poemModalTitle=document.getElementById('poemModalTitle'),poemModalText=document.getElementById('poemModalText');
+      const poemPersistent=document.getElementById('poemPersistent'),poemPersistentTitle=document.getElementById('poemPersistentTitle'),poemPersistentText=document.getElementById('poemPersistentText');
+      const playPauseBtn=document.getElementById('playPauseBtn'),restartBtn=document.getElementById('restartBtn'),seekBar=document.getElementById('seekBar'),timeLabel=document.getElementById('timeLabel');
+      const bgSoundBtn=document.getElementById('bgSoundBtn'),eq=document.getElementById('eq');
+
+      let bgAudio=document.getElementById('bgAudio');
+      if(!bgAudio){bgAudio=document.createElement('audio');bgAudio.id='bgAudio';bgAudio.src=BG_MUSIC_SRC;bgAudio.loop=true;bgAudio.preload='auto';bgAudio.style.display='none';document.body.appendChild(bgAudio)}
+      const sync=()=>{const topPlaying=!!audioPlayer.src&&!audioPlayer.paused&&!audioPlayer.ended;if(topPlaying){bgAudio.pause()}else if(!bgMuted&&isUnlocked){bgAudio.play().catch(()=>{})}}
+
+      let isSeeking=false;
+      const refresh=()=>{const c=audioPlayer.currentTime||0,d=Number.isFinite(audioPlayer.duration)?audioPlayer.duration:0;if(!isSeeking)seekBar.value=d>0?(c/d)*100:0;timeLabel.textContent=`${fmt(c)} / ${fmt(d)}`;playPauseBtn.textContent=audioPlayer.paused?'▶':'❚❚';eq.classList.toggle('playing',!audioPlayer.paused&&!audioPlayer.ended)};
+      playPauseBtn.onclick=()=>{if(!audioPlayer.src)return;if(audioPlayer.paused)audioPlayer.play().catch(()=>{});else audioPlayer.pause()};
+      restartBtn.onclick=()=>{if(!audioPlayer.src)return;audioPlayer.currentTime=0;audioPlayer.play().catch(()=>{})};
+      const seekToPercent=async()=>{const d=Number.isFinite(audioPlayer.duration)?audioPlayer.duration:0;if(!audioPlayer.src||d<=0)return;const target=(Number(seekBar.value)/100)*d;const wasPlaying=!audioPlayer.paused&&!audioPlayer.ended;audioPlayer.currentTime=Math.max(0,Math.min(target,Math.max(0,d-0.01)));if(wasPlaying){try{await audioPlayer.play()}catch(_){}}refresh()};
+      seekBar.addEventListener('input',()=>{isSeeking=true;const d=Number.isFinite(audioPlayer.duration)?audioPlayer.duration:0;const p=(Number(seekBar.value)/100)*d;timeLabel.textContent=`${fmt(p)} / ${fmt(d)}`});
+      seekBar.addEventListener('change',async()=>{await seekToPercent();isSeeking=false});
+      seekBar.addEventListener('mouseup',async()=>{if(isSeeking){await seekToPercent();isSeeking=false}});
+      seekBar.addEventListener('pointerup',async()=>{if(isSeeking){await seekToPercent();isSeeking=false}});
+      seekBar.addEventListener('touchend',async()=>{if(isSeeking){await seekToPercent();isSeeking=false}});
+      seekBar.addEventListener('keyup',async e=>{if(['ArrowLeft','ArrowRight','Home','End','PageUp','PageDown'].includes(e.key)){await seekToPercent();isSeeking=false}});
+      ['timeupdate','loadedmetadata','play','pause','ended','seeking','seeked'].forEach(ev=>audioPlayer.addEventListener(ev,()=>{refresh();sync()}));
+      bgSoundBtn.onclick=()=>{bgMuted=!bgMuted;bgAudio.muted=bgMuted;bgSoundBtn.textContent=bgMuted?'🔇':'🔊';sync()};
+
+      document.title=data?.meta?.title||'Happy 1st Monthsary ❤️';
+      heroHeading.textContent=data?.hero?.heading||'Happy 1st Monthsary, Love';
+      heroIntro.textContent=data?.hero?.intro||'';
+      initQuoteRotator(safeArray(data?.quotes));
+      const meterVal=Math.max(0,Math.min(100,Number(data?.loveMeter?.value??95)));
+      document.getElementById('loveMeterLabel').textContent=data?.loveMeter?.label||'Love Meter';
+      document.getElementById('loveMeterFill').style.width=`${meterVal}%`;
+      document.getElementById('loveMeterValue').textContent=`${meterVal}%`;
+
+      letterTitle.textContent=data?.loveLetter?.title||'My Letter To You';
+      letterBody.textContent=data?.loveLetter?.body||'';
+      document.getElementById('milestonesWrap').innerHTML=safeArray(data?.milestones).map(m=>`<article class="glass rounded-xl p-3 text-center"><p class="text-xs text-pink-100/80">${m.label||''}</p><p class="text-lg font-semibold">${m.value||''}</p></article>`).join('');
+     document.getElementById('surpriseTitle').textContent =
+  data?.surprise?.title || 'For You, My Love 💌';
+
+const envelopeCard =
+  document.getElementById('envelopeCard');
+
+const surpriseModal =
+  document.getElementById('surpriseModal');
+
+const surpriseModalTitle =
+  document.getElementById('surpriseModalTitle');
+
+const surpriseModalMessage =
+  document.getElementById('surpriseModalMessage');
+
+const closeSurpriseModal =
+  document.getElementById('closeSurpriseModal');
+
+envelopeCard.onclick = () => {
+  surpriseModalTitle.textContent =
+    data?.surprise?.title || 'A Little Surprise 💌';
+
+  if (Array.isArray(data?.surprise?.message)) {
+    surpriseModalMessage.innerHTML =
+      data.surprise.message
+        .map(msg => `<p class="mb-4">${msg}</p>`)
+        .join('');
+  } else {
+    surpriseModalMessage.textContent =
+      data?.surprise?.message || '';
+  }
+
+  surpriseModal.classList.add('show');
+
+  launchConfetti();
+  createHeartRain();
+};
+
+closeSurpriseModal.onclick = () => {
+  surpriseModal.classList.remove('show');
+};
+
+surpriseModal.addEventListener('click', e => {
+  if (e.target === surpriseModal) {
+    surpriseModal.classList.remove('show');
+  }
+});
+      reasonsList.innerHTML=safeArray(data?.reasons).map(item=>`<li class="glass rounded-xl p-3">💗 ${item}</li>`).join('');
+
+      const memories=safeArray(data?.memories);
+      lightboxPhotos=memories.map(mem=>typeof mem==='object'&&mem?.photo?mem.photo:'./media/photos/placeholder.jpg');
+      memoriesList.innerHTML=memories.map((mem,idx)=>{const text=typeof mem==='string'?mem:(mem?.text||'');const photo=typeof mem==='object'&&mem?.photo?mem.photo:'./media/photos/placeholder.jpg';return `<article class="memory-card glass rounded-xl p-3"><img src="${photo}" alt="Sweet memory photo" data-photo-index="${idx}" onerror="this.src='./media/photos/placeholder.jpg'"><p class="text-sm text-pink-50/90">📸 ${text}</p></article>`}).join('');
+      memoriesList.querySelectorAll('img[data-photo-index]').forEach(img=>img.addEventListener('click',()=>openLightbox(Number(img.getAttribute('data-photo-index')))));
+
+      timelineWrap.innerHTML=`<div class="timeline-line"></div>`+safeArray(data?.timeline).map(t=>`<article class="relative"><span class="absolute -left-[34px] top-1 w-4 h-4 rounded-full bg-pink-300"></span><div class="glass rounded-xl p-4"><p class="text-xs uppercase tracking-wider text-pink-200/80">${t.date||''}</p><h4 class="font-semibold text-lg">${t.title||''}</h4><p class="text-pink-50/85">${t.description||''}</p></div></article>`).join('');
+
+      celebrateTitle.textContent=data?.celebration?.title||'Celebrate With Our Songs 🎶';
+      celebrateDesc.textContent=data?.celebration?.description||'';
+      const songs=safeArray(data?.celebration?.songs).slice(0,5);
+      songsList.innerHTML=songs.map((song,idx)=>`<button class="song-item glass w-full text-left rounded-xl p-4 border border-white/10 transition" data-song-index="${idx}"><p class="font-semibold">${idx+1}. ${song.name||'Untitled Song'}</p><p class="text-sm text-pink-100/80">${song.artist||'Unknown Artist'}</p></button>`).join('');
+      songsList.querySelectorAll('[data-song-index]').forEach(btn=>btn.addEventListener('click',()=>{songsList.querySelectorAll('.song-item').forEach(i=>i.classList.remove('active'));btn.classList.add('active');const i=Number(btn.getAttribute('data-song-index'));const s=songs[i];if(!s)return;nowPlaying.textContent=`${s.name} — ${s.artist}`;audioPlayer.src=s.url||'';audioPlayer.load();audioPlayer.play().catch(()=>{});const poem=s.poem||`My Love, this song reminds me how deeply and softly I love you.`;poemModalTitle.textContent=s.name||'Our Song';poemModalText.textContent=poem;poemPersistentTitle.textContent=s.name||'Our Song';poemPersistentText.textContent=poem;poemPersistent.classList.remove('hidden');poemModal.classList.add('show')}));
+    }
+
+    async function loadContent(){const res=await fetch(`./data/content.json?v=${Date.now()}`,{cache:'no-store'});if(!res.ok)throw new Error('Failed to load content');const data=await res.json();state.content=data;renderData(data)}
+
+    document.addEventListener('DOMContentLoaded',async()=>{
+      await loadContent();
+
+      const firstBtn=document.querySelector('#step1 [data-next]'),returnBtn=document.getElementById('returnToStartBtn');
+      const pwdModal=document.getElementById('passwordModal'),pwdInput=document.getElementById('passwordInput'),pwdErr=document.getElementById('passwordError'),pwdSubmit=document.getElementById('passwordSubmitBtn');
+
+      firstBtn.addEventListener('click',()=>{if(isUnlocked){nextStep();return;}pwdInput.value='';pwdErr.classList.add('hidden');pwdModal.classList.add('show');pwdInput.focus()});
+      pwdSubmit.addEventListener('click',()=>{if(pwdInput.value===SITE_PASSWORD){isUnlocked=true;pwdModal.classList.remove('show');nextStep();const bg=document.getElementById('bgAudio');if(bg&&!bgMuted)bg.play().catch(()=>{})}else pwdErr.classList.remove('hidden')});
+      pwdInput.addEventListener('keydown',e=>{if(e.key==='Enter')pwdSubmit.click()});
+
+      document.querySelectorAll('#step2 [data-next], #step3 [data-next], #step4 [data-next]').forEach(btn=>btn.addEventListener('click',nextStep));
+      returnBtn.addEventListener('click',()=>{if(state.currentStep>1)showStep(state.currentStep-1)});
+
+      document.getElementById('celebrateBtn').addEventListener('click',launchConfetti);
+      document.getElementById('heartRainBtn').addEventListener('click',createHeartRain);
+      document.getElementById('emoteBtn').addEventListener('click',createEmotionBurst);
+
+      document.getElementById('closePoemModal').addEventListener('click',()=>document.getElementById('poemModal').classList.remove('show'));
+      document.getElementById('poemModal').addEventListener('click',e=>{if(e.target.id==='poemModal')document.getElementById('poemModal').classList.remove('show')});
+
+      document.getElementById('lightboxClose').addEventListener('click',()=>document.getElementById('lightboxModal').classList.remove('show'));
+      document.getElementById('lightboxPrev').addEventListener('click',()=>stepLightbox(-1));
+      document.getElementById('lightboxNext').addEventListener('click',()=>stepLightbox(1));
+      document.getElementById('lightboxModal').addEventListener('click',e=>{if(e.target.id==='lightboxModal')document.getElementById('lightboxModal').classList.remove('show')});
+
+      setProgress();showStep(1);
+    });
+  </script>
+</body>
+</html>
