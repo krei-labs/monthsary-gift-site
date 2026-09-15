@@ -1,4 +1,4 @@
-<p align="center">
+<p align="center"> 
   <img src="./readme-banner.png" alt="1st Monthsary Gift Website banner" width="600">
 </p>
 
